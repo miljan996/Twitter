@@ -61,7 +61,13 @@ public class TwitterPorukaTest {
 		String korisnik = "";
 		tp.setKorisnik(korisnik);
 	}
-
+	
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetKorisnikEmptyStrBug() {
+		String korisnik = new String("");
+		tp.setKorisnik(korisnik);
+	}
+	
 	/**
 	 * Test method for {@link com.twitter.poruke.TwitterPoruka#setPoruka(java.lang.String)}.
 	 */
@@ -95,9 +101,12 @@ public class TwitterPorukaTest {
 	 */
 	@Test (expected = java.lang.RuntimeException.class)
 	public void testSetPorukaLength() {
-		String poruka = "Twitter test message Twitter test message Twitter test message Twitter test message "
-				+ "Twitter test message Twitter test message Twitter test message Twitter test message "
-				+ "Twitter test message Twitter test message";
+		String poruka = "";
+		
+		for (int i = 0; i < 141; i++) {
+			poruka += "A";
+		}
+		
 		tp.setPoruka(poruka);
 	}
 

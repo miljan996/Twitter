@@ -2,7 +2,11 @@ package com.twitter;
 
 import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
-
+/**
+ * 
+ * @author Miljan Ignjatovic
+ *
+ */
 public class Twitter {
 
 	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();

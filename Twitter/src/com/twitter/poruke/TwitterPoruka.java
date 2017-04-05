@@ -33,7 +33,8 @@ public class TwitterPoruka {
 	 * 
 	 */
 	public void setKorisnik(String korisnik) {
-		if (korisnik == null || !korisnik.isEmpty())
+		//Changed 2nd conditional; it should check if parameter korisnik IS empty
+		if (korisnik == null || korisnik.isEmpty()) 
 			throw new RuntimeException("Ime korisnika mora biti uneto");
 
 		this.korisnik = korisnik;
@@ -43,7 +44,9 @@ public class TwitterPoruka {
 	 * @return poruka - String with user's message
 	 */
 	public String getPoruka() {
-		return "poruka";
+		//Changed return statment; it should return poruka attribute
+		// not "poruka" as a String
+		return poruka;
 	}
 	/**
 	 * set method for attribute poruka
@@ -57,7 +60,9 @@ public class TwitterPoruka {
 	 * </ul>
 	 */
 	public void setPoruka(String poruka) {
-		if (this.poruka == null || this.poruka == new String("") || this.poruka.length() > 140)
+		//Removed this from all conditionlas
+		//Changed 2nd conditional ( this.poruka == new String("") )
+		if (poruka == null || poruka.isEmpty() || poruka.length() > 140)
 			throw new RuntimeException("Poruka mora biti uneta i mora imati najvise 140 znakova");
 		this.poruka = poruka;
 	}
