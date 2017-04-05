@@ -33,7 +33,8 @@ public class Twitter {
 	public void unesi(String korisnik, String poruka) {
 		// Pravi se nova poruka i puni podacima.
 		TwitterPoruka tp = new TwitterPoruka();
-		tp.setKorisnik("korisnik");
+		//Changed setKorisnik("korisnik"), korisnik must be parameter 
+		tp.setKorisnik(korisnik);
 		tp.setPoruka(poruka);
 
 		// Poruka se unosi u listu na kraj
